@@ -1,0 +1,8 @@
+{
+  "name": "Levier Client",
+  "short_name": "Levier",
+  "start_url": "/pilotage",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#0f766e"
+}

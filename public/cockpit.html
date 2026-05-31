@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cockpit privé - Levier Client</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body class="cockpit-page">
+    <aside class="sidebar">
+      <a class="brand-mark" href="/">
+        <img class="brand-logo" src="/assets/levier-client-logo.svg" alt="" />
+        <span>Levier Client</span>
+      </a>
+      <p class="private-label">Poste privé</p>
+      <nav class="side-nav" aria-label="Navigation cockpit">
+        <button class="active" data-view="direction">Direction</button>
+        <button data-view="agentos">Agent OS</button>
+        <button data-view="prospection">Prospection</button>
+        <button data-view="outbox">Brouillons</button>
+        <button data-view="controle">Agent contrôle</button>
+        <button data-view="finance">Claire - Finance</button>
+        <button data-view="risque">Hugo - Risque</button>
+        <button data-view="agents">Agents</button>
+        <button data-view="audit">Audit Google</button>
+        <button data-view="fiches">Fiches produits</button>
+        <button data-view="arbitrage">Arbitrage</button>
+        <button data-view="messages">Messages rapides</button>
+        <button data-view="security">S&eacute;curit&eacute;</button>
+      </nav>
+    </aside>
+
+    <main class="cockpit-main">
+      <header class="cockpit-topbar">
+        <div>
+          <p class="eyebrow">Samedi 30 mai 2026</p>
+          <h1 id="viewTitle">Direction</h1>
+        </div>
+        <div class="topbar-actions">
+          <select id="quickJump" aria-label="Accès rapide">
+            <option value="direction">Direction</option>
+            <option value="agentos">Agent OS</option>
+            <option value="prospection">Prospection</option>
+            <option value="outbox">Brouillons</option>
+            <option value="controle">Agent contrôle</option>
+            <option value="finance">Claire - Finance</option>
+            <option value="risque">Hugo - Risque</option>
+            <option value="audit">Audit Google</option>
+            <option value="fiches">Fiches produits</option>
+            <option value="arbitrage">Arbitrage</option>
+            <option value="messages">Messages</option>
+            <option value="security">S&eacute;curit&eacute;</option>
+          </select>
+          <button class="button secondary" id="runCycleBtn" type="button">Lancer cycle</button>
+          <button class="button ghost-dark" id="logoutBtn" type="button">Sortir</button>
+        </div>
+      </header>
+
+      <section id="viewRoot" class="view-root" aria-live="polite"></section>
+    </main>
+
+    <script src="/cockpit.js"></script>
+  </body>
+</html>

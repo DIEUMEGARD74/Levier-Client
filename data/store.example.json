@@ -1,0 +1,267 @@
+{
+  "brand": {
+    "activeName": "Levier Client",
+    "tagline": "Des actions rapides pour rendre une offre locale plus claire, plus rassurante et plus facile à convertir.",
+    "nameIdeas": [
+      "Levier Client",
+      "levier-client.fr",
+      "Audit Google",
+      "Fiches produits",
+      "WhatsApp",
+      "Validation humaine"
+    ]
+  },
+  "pillars": {
+    "manager": {
+      "name": "Nora",
+      "role": "Agent manager",
+      "mission": "Coordonne les moteurs Audit, Fiches Produits et Arbitrage, puis prépare ta liste de décisions.",
+      "status": "Active",
+      "focus": "Prioriser les opportunités prêtes à encaisser."
+    },
+    "finance": {
+      "name": "Claire",
+      "role": "Garde-fou finance",
+      "mission": "Calcule la marge, le cash engagé, le risque de perte et le seuil de rentabilité.",
+      "status": "Active",
+      "focus": "Bloquer tout ce qui ne laisse pas assez de marge nette."
+    },
+    "risk": {
+      "name": "Hugo",
+      "role": "Garde-fou risque",
+      "mission": "Contrôle conformité, réputation, promesses commerciales, RGPD et produits sensibles.",
+      "status": "Active",
+      "focus": "Empêcher les actions risquées avant validation humaine."
+    }
+  },
+  "agents": [
+    {
+      "role": "Radar local",
+      "engine": "Audit Google",
+      "cadence": "2 cycles/jour",
+      "mission": "Trouver des fiches Google Business faibles et préparer un angle d'approche."
+    },
+    {
+      "role": "Optimiseur fiches",
+      "engine": "Fiches produits",
+      "cadence": "1 cycle/jour",
+      "mission": "Repérer les annonces et boutiques mal présentées, puis produire un avant/après vendable."
+    },
+    {
+      "role": "Scanner arbitrage",
+      "engine": "Arbitrage",
+      "cadence": "3 cycles/jour",
+      "mission": "Repérer les écarts achat/revente avec marge nette et risque maîtrisé."
+    },
+    {
+      "role": "Rédacteur commercial",
+      "engine": "Tous",
+      "cadence": "A la demande",
+      "mission": "Préparer les messages, relances, audits courts et livrables client."
+    },
+    {
+      "role": "Veille ManovaSite - audit visuel",
+      "engine": "ManovaSite",
+      "cadence": "À chaque recherche approfondie",
+      "mission": "Repère les sites vieillissants, les visuels faibles, les textes confus, les prix mal présentés et les parcours qui peuvent freiner une demande."
+    },
+    {
+      "role": "Veille ManovaSite - offre web",
+      "engine": "ManovaSite",
+      "cadence": "À chaque recherche approfondie",
+      "mission": "Transforme les signaux web en suggestion interne pour Nora, sans envoyer de message séparé. Le lien ManovaSite n'est proposé que lorsqu'il est configuré et pertinent."
+    },
+    {
+      "role": "Veille Temps Libre - charge administrative",
+      "engine": "Temps Libre",
+      "cadence": "À chaque recherche approfondie",
+      "mission": "Repère les indices d'activité chronophage, comme réservations, demandes clients, horaires, coordination ou messages répétitifs."
+    },
+    {
+      "role": "Veille Temps Libre - agents IA",
+      "engine": "Temps Libre",
+      "cadence": "À chaque recherche approfondie",
+      "mission": "Propose à Nora un ajout discret sur les agents IA de Temps Libre quand le contexte montre un besoin de gestion de mails, rendez-vous ou suivi client."
+    }
+  ],
+  "agentOs": {
+    "mode": "validation_humaine",
+    "objective": "Produire des prospects, brouillons et recommandations; la direction valide les envois et les liens de paiement.",
+    "approvalPolicy": {
+      "prospectingEmail": "validation_direction",
+      "paymentLink": "validation_direction",
+      "purchase": "validation_direction",
+      "maxSpendWithoutApproval": 0
+    },
+    "compliance": {
+      "scope": "B2B cible uniquement",
+      "optOutText": "Si vous ne souhaitez plus recevoir de message de ma part, répondez simplement STOP et je supprimerai votre contact de ma liste.",
+      "sourceRule": "Ne contacter que des professionnels avec un message lié à leur activité.",
+      "copyRule": "Les messages doivent être relus par Hugo, avec accents français, ponctuation naturelle, listes autorisées pour de vraies énumérations, aucun tiret au milieu d'une phrase et aucun deux-points hors URL."
+    },
+    "cycles": {
+      "lastRun": null,
+      "targetDraftsPerCycle": 3
+    },
+    "managerBrief": {
+      "owner": "Nora",
+      "pipeline": "1. Trouver des prospects B2B publics. 2. Garder uniquement ceux avec e-mail public exploitable. 3. Récupérer site, téléphone et contexte utile. 4. Qualifier besoin et offre adaptée. 5. Rédiger un mail humain avec preuve de lecture et site Levier Client. 6. Laisser la direction valider avant envoi.",
+      "conversionRule": "Le premier message doit mener à une réponse simple. Le lien Stripe reste prêt dans le cockpit et s'envoie après validation explicite du besoin.",
+      "guardrails": "Pas de scraping intrusif, pas de données sensibles, pas de promesse excessive, opt-out STOP obligatoire, envoi seulement après validation humaine."
+    },
+    "integrations": {
+      "openai": "configure",
+      "googlePlaces": "configure",
+      "zoho": "configure",
+      "sendMode": "approval"
+    },
+    "prospecting": {
+      "defaultCity": "Montpellier",
+      "dailyLimit": 20,
+      "requireEmail": true,
+      "lastSearch": null
+    }
+  },
+  "metrics": {
+    "revenueBooked": 0,
+    "cashCommitted": 0,
+    "potentialPipeline": 515,
+    "lastCycle": null
+  },
+  "prospects": [],
+  "outbox": [],
+  "opportunities": [
+    {
+      "id": "opp-audit-001",
+      "type": "audit",
+      "title": "Audit fiche Google - restaurant local",
+      "target": "Restaurant indépendant",
+      "source": "Prospection locale",
+      "potentialRevenue": 99,
+      "cost": 0,
+      "riskLevel": "low",
+      "priority": "high",
+      "status": "a_valider",
+      "nextAction": "Envoyer le message d'approche et proposer un audit express à 99 euros.",
+      "notes": "Exemple de démarrage : fiche avec peu de réponses aux avis, description courte et photos anciennes.",
+      "createdAt": "2026-05-31T21:09:25.052Z",
+      "updatedAt": "2026-05-31T21:09:25.052Z",
+      "expectedMargin": 99,
+      "marginRate": 100,
+      "financeVerdict": "OK",
+      "riskVerdict": "OK",
+      "guardianSummary": "Claire: OK (99 euros estimés). Hugo: OK."
+    },
+    {
+      "id": "opp-fiche-001",
+      "type": "fiche",
+      "title": "Pack 10 fiches produits - boutique artisanale",
+      "target": "Boutique e-commerce déco",
+      "source": "Recherche manuelle",
+      "potentialRevenue": 149,
+      "cost": 8,
+      "riskLevel": "low",
+      "priority": "medium",
+      "status": "a_valider",
+      "nextAction": "Envoyer un avant/après gratuit sur une fiche produit faible.",
+      "notes": "Promesse simple : titres, bénéfices, FAQ, mini SEO et variantes de description.",
+      "createdAt": "2026-05-31T21:09:25.052Z",
+      "updatedAt": "2026-05-31T21:09:25.052Z",
+      "expectedMargin": 141,
+      "marginRate": 95,
+      "financeVerdict": "OK",
+      "riskVerdict": "OK",
+      "guardianSummary": "Claire: OK (141 euros estimés). Hugo: OK."
+    },
+    {
+      "id": "opp-arb-001",
+      "type": "arbitrage",
+      "title": "Lot objet local à revendre",
+      "target": "Annonce marketplace",
+      "source": "Arbitrage local",
+      "potentialRevenue": 90,
+      "cost": 35,
+      "riskLevel": "medium",
+      "priority": "medium",
+      "status": "a_valider",
+      "nextAction": "Vérifier l'état réel, négocier à 30 euros, acheter seulement après validation.",
+      "notes": "Marge estimée avant déplacement et frais. Achat bloqué sans ton feu vert.",
+      "createdAt": "2026-05-31T21:09:25.052Z",
+      "updatedAt": "2026-05-31T21:09:25.052Z",
+      "expectedMargin": 55,
+      "marginRate": 61,
+      "financeVerdict": "OK",
+      "riskVerdict": "Revue requise",
+      "guardianSummary": "Claire: OK (55 euros estimés). Hugo: Revue requise."
+    }
+  ],
+  "messages": [
+    {
+      "id": "audit-premier-contact",
+      "label": "Approche audit Google",
+      "engine": "Audit Google",
+      "body": "Bonjour, j'ai regardé rapidement votre fiche Google. Il y a 3 points simples qui peuvent vous faire gagner plus d'appels et de visites sans publicité. Je peux vous envoyer un mini audit clair en 24h, avec les corrections prioritaires. Le format express est à 99 euros. Vous voulez que je vous montre un exemple ?"
+    },
+    {
+      "id": "fiche-avant-apres",
+      "label": "Avant/après fiche produit",
+      "engine": "Fiches produits",
+      "body": "Bonjour, je suis tombé sur une de vos fiches produit. Le produit a du potentiel, mais la présentation ne met pas assez en avant les bénéfices, les objections et les mots-clés d'achat. Je peux vous refaire une fiche test en avant/après. Si ça vous plaît, le pack de 10 fiches est à 149 euros."
+    },
+    {
+      "id": "relance-douce",
+      "label": "Relance douce",
+      "engine": "Tous",
+      "body": "Bonjour, je me permets une petite relance. J'ai gardé la proposition de côté : l'idée est de corriger les points qui font perdre des demandes, sans vous ajouter de travail. Si vous voulez, je vous envoie le plan en 3 actions prioritaires."
+    },
+    {
+      "id": "paiement",
+      "label": "Demande paiement",
+      "engine": "Tous",
+      "body": "Parfait, je peux lancer la préparation. Pour bloquer le créneau, voici le lien de paiement. Dès réception, je vous livre la première version sous 24h avec une synthèse claire et les actions recommandées."
+    },
+    {
+      "id": "livraison",
+      "label": "Livraison client",
+      "engine": "Tous",
+      "body": "Voici la livraison. J'ai mis en priorité ce qui peut produire un effet rapide : clarté de l'offre, éléments de réassurance, mots-clés utiles et appel à l'action. Dites-moi ce que vous souhaitez ajuster et je vous fais une passe de correction."
+    }
+  ],
+  "paymentLinks": [
+    {
+      "id": "audit-express",
+      "label": "Audit Express",
+      "amount": 49,
+      "mode": "live",
+      "url": "https://buy.stripe.com/00w8wQ6IH3YZfcZ45n0gw00"
+    },
+    {
+      "id": "audit-action",
+      "label": "Audit Action",
+      "amount": 99,
+      "mode": "live",
+      "url": "https://buy.stripe.com/bJe7sMeb92UVc0NdFX0gw02"
+    },
+    {
+      "id": "fiche-produit-solo",
+      "label": "Fiche produit solo",
+      "amount": 79,
+      "mode": "live",
+      "url": "https://buy.stripe.com/cNi4gAffd533e8VeK10gw01"
+    },
+    {
+      "id": "pack-10-fiches",
+      "label": "Pack 10 fiches",
+      "amount": 149,
+      "mode": "live",
+      "url": "https://buy.stripe.com/3cI6oI7ML8ff5CpdFX0gw03"
+    }
+  ],
+  "leads": [],
+  "activity": [],
+  "security": {
+    "passwordHash": null,
+    "passwordSalt": null,
+    "passwordChangedAt": null
+  }
+}

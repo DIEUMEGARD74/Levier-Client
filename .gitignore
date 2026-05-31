@@ -1,0 +1,9 @@
+.env
+data/store.json
+logs/
+screenshots/
+deploy/**/*.zip
+*.zip
+node_modules/
+.DS_Store
+Thumbs.db

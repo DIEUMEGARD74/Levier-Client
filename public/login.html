@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connexion - Levier Client</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="login-page">
+    <main class="login-panel">
+      <a class="brand-mark" href="/">
+        <img class="brand-logo" src="/assets/levier-client-logo.svg" alt="" />
+        <span>Levier Client</span>
+      </a>
+      <h1>Poste de pilotage</h1>
+      <p>Accès privé. Mot de passe requis pour voir les opportunités, décisions et garde-fous.</p>
+      <form id="loginForm">
+        <label>
+          Mot de passe
+          <input name="password" type="password" autocomplete="current-password" required autofocus />
+        </label>
+        <button class="button primary" type="submit">Entrer</button>
+        <p class="form-status" id="loginStatus" aria-live="polite"></p>
+      </form>
+    </main>
+    <script src="/login.js"></script>
+  </body>
+</html>

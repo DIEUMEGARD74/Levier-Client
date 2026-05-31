@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: levier-client
+    env: node
+    plan: starter
+    buildCommand: npm install --omit=dev
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PUBLIC_HOST
+        value: levier-client.fr
+      - key: PILOT_HOST
+        value: pilotage.levier-client.fr
+      - key: CASH_ADMIN_PASSWORD
+        sync: false

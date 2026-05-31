@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Levier Client</title>
+  <desc id="desc">Symbole abstrait de levier, progression et confiance.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 130h100" stroke="#17202a" stroke-width="11"/>
+    <path d="M48 104 112 48" stroke="#0f766e" stroke-width="13"/>
+    <path d="M112 48h-25" stroke="#0f766e" stroke-width="13"/>
+    <path d="M112 48v25" stroke="#0f766e" stroke-width="13"/>
+    <path d="M48 104h24" stroke="#17202a" stroke-width="10"/>
+    <path d="M48 104V80" stroke="#17202a" stroke-width="10"/>
+    <circle cx="48" cy="104" r="9" fill="#2563eb" stroke="none"/>
+    <circle cx="112" cy="48" r="9" fill="#b45309" stroke="none"/>
+  </g>
+</svg>
