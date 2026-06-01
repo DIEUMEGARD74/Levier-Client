@@ -17,6 +17,8 @@ Le fichier `render.yaml` est prêt pour :
 - application Node.js ;
 - démarrage avec `npm start` ;
 - endpoint santé `/healthz` ;
+- région Europe `frankfurt` ;
+- domaine `pilotage.levier-client.fr` ;
 - disque persistant monté sur `/var/data` ;
 - stockage cockpit dans `/var/data/store.json` ;
 - variables sensibles à renseigner dans Render sans les mettre dans GitHub.
@@ -65,7 +67,7 @@ Cible : adresse Render donnée
 Proxy : DNS uniquement au début
 ```
 
-Ensuite ajouter `pilotage.levier-client.fr` comme domaine personnalisé dans Render.
+Le domaine `pilotage.levier-client.fr` est déjà déclaré dans `render.yaml`. Render affichera les enregistrements DNS attendus dans la page du service.
 
 ## Contrôle final
 
