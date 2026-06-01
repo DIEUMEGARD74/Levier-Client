@@ -4,13 +4,40 @@ services:
     env: node
     plan: starter
     buildCommand: npm install --omit=dev
-    startCommand: node server.js
+    startCommand: npm start
+    healthCheckPath: /healthz
+    disk:
+      name: cockpit-data
+      mountPath: /var/data
+      sizeGB: 1
     envVars:
       - key: NODE_ENV
         value: production
+      - key: DATA_DIR
+        value: /var/data
       - key: PUBLIC_HOST
         value: levier-client.fr
       - key: PILOT_HOST
         value: pilotage.levier-client.fr
       - key: CASH_ADMIN_PASSWORD
         sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GOOGLE_PLACES_API_KEY
+        sync: false
+      - key: SEND_MODE
+        value: approval
+      - key: ZOHO_SMTP_HOST
+        value: smtppro.zoho.eu
+      - key: ZOHO_SMTP_PORT
+        value: 587
+      - key: ZOHO_SMTP_USER
+        value: bonjour@levier-client.fr
+      - key: ZOHO_SMTP_PASS
+        sync: false
+      - key: MAIL_FROM
+        value: bonjour@levier-client.fr
+      - key: PARTNER_TEMPS_LIBRE_URL
+        value: https://templibre.fr/
+      - key: PARTNER_MANOVASITE_URL
+        value: ""

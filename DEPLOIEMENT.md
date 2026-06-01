@@ -49,6 +49,7 @@ ou utiliser le script `npm start`.
 ```text
 NODE_ENV=production
 PORT=8080
+DATA_DIR=/var/data
 PUBLIC_HOST=levier-client.fr
 PILOT_HOST=pilotage.levier-client.fr
 CASH_ADMIN_PASSWORD=<mot-de-passe-fort>
@@ -87,9 +88,14 @@ La V0 stocke les données dans :
 data/store.json
 ```
 
-En hébergement cloud, prévoir :
+En hébergement cloud, configurer `DATA_DIR` vers un disque persistant :
 
-- un disque persistant ;
-- ou une migration vers une base distante, par exemple Postgres ou Supabase.
+```text
+DATA_DIR=/var/data
+```
+
+Sur Render, le fichier `render.yaml` prévoit un disque persistant monté sur `/var/data`.
+
+Alternative future : migrer vers une base distante, par exemple Postgres ou Supabase.
 
 Ne pas committer `data/store.json` dans GitHub.

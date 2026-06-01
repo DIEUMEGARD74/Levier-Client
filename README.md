@@ -126,3 +126,5 @@ Le cockpit permet de consulter :
 - rapports Claire et Hugo ;
 - agents opérationnels ;
 - liens de paiement.
+
+Pour l'accès mobile à distance, voir `COCKPIT_DISTANCE.md`.

@@ -48,7 +48,8 @@ const ZOHO_SMTP_PASS = process.env.ZOHO_SMTP_PASS || "";
 const MAIL_FROM = process.env.MAIL_FROM || ZOHO_SMTP_USER || "bonjour@levier-client.fr";
 const ROOT = __dirname;
 const PUBLIC_DIR = path.join(ROOT, "public");
-const STORE_FILE = path.join(ROOT, "data", "store.json");
+const DATA_DIR = path.resolve(ROOT, process.env.DATA_DIR || "data");
+const STORE_FILE = path.join(DATA_DIR, "store.json");
 const PUBLIC_SITE_URL = "https://www.levier-client.fr";
 const OFFERS_URL = `${PUBLIC_SITE_URL}/#formules`;
 const CONTACT_URL = `${PUBLIC_SITE_URL}/#contact`;
@@ -2148,6 +2149,10 @@ async function handleRequest(req, res) {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const pathname = decodeURIComponent(url.pathname);
   const host = getHost(req);
+
+  if (pathname === "/healthz") {
+    return sendJson(res, 200, { ok: true, service: "levier-client", at: nowIso() }, securityHeaders(req));
+  }
 
   if (IS_PRODUCTION && host === PUBLIC_HOST && ["/pilotage", "/connexion"].includes(pathname)) {
     return send(res, 302, "", { ...securityHeaders(req), Location: absoluteUrl(req, PILOT_HOST, pathname) });
